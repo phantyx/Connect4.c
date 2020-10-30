@@ -7,17 +7,17 @@ int Teardown();
 char AcceptInput(char player[]);
 int UpdateWorld(char input);
 int DisplayWorld(int switchResult);
-char player1[20]; 			// Player 1 Name
-char player2[20]; 			// Player 2 Name
+char player1[20]; 		// Player 1 Name
+char player2[20]; 		// Player 2 Name
 char currentSymbol; 		// Holds the current symbol to be placed
 bool GameContinue = true; 	// Flag for the game loop
-int flipflop = 0; 			// Tracks which player is taking their turn
-int boardRows = 6; 			// Board Height
+int flipflop = 0; 		// Tracks which player is taking their turn
+int boardRows = 6; 		// Board Height
 int boardColumns = 7; 		// Board Width
-char** board; 				// Board Pointer
-int aCount = 0; 			// Counts keeping track of how high each "stack" is for each row.
-int bCount = 0; 			// 		I approached it this way rather than iterating through each
-int cCount = 0; 			// 		column in the grid to check it's current size.
+char** board; 			// Board Pointer
+int aCount = 0; 		// Counts keeping track of how high each "stack" is for each row.
+int bCount = 0; 		// 		I approached it this way rather than iterating through each
+int cCount = 0; 		// 		column in the grid to check it's current size.
 int dCount = 0;
 int eCount = 0;
 int fCount = 0;
@@ -47,9 +47,9 @@ int Initialization () 		// Creates the game board and takes inputs for player na
 	char toggle = 'n';
 	printf("Setting up the game...\n");
 	board = (char **)malloc(boardColumns * sizeof(char *)); 	// Makes an array of size 7
-	for (int i = 0; i < boardColumns; i++)						// Iterates through, 7 times
+	for (int i = 0; i < boardColumns; i++)				// Iterates through, 7 times
 		board[i] = (char *)malloc(boardRows * sizeof(char));	// Makes arrays of size 6 and adds them to each address (0-6)
-	for (int j = 0; j < boardColumns; j++)						// Then fills each address with a '_' to denote an empty slot.
+	for (int j = 0; j < boardColumns; j++)				// Then fills each address with a '_' to denote an empty slot.
 	{
 		for (int k = 0; k < boardRows; k++)
 			board[j][k] = '_';
@@ -64,7 +64,7 @@ int Initialization () 		// Creates the game board and takes inputs for player na
 		printf("Player 1 (x's): %s | Player 2 (o's): %s\n", player1, player2);
 		printf("(y/n) Is this correct? : ");					
 		scanf(" %c", &toggle);									// Checks for name correctness, allows the user to input new names if incorrect.
-		if (toggle == 'y')										// Simple y/n with input validation.
+		if (toggle == 'y')									// Simple y/n with input validation.
 		{
 			break;
 		}
@@ -235,7 +235,7 @@ int DisplayWorld(int switchResult)			// Phyiscally prints the board.
 	switch (switchResult)
 	{
 		//*
-		case 1 :													// Case 1: Someone won the game by connecting 4 discs. 
+		case 1 :				// Case 1: Someone won the game by connecting 4 discs. 
 		{
 			for (int i = 0; i < boardRows; i++)
 			{
@@ -255,7 +255,7 @@ int DisplayWorld(int switchResult)			// Phyiscally prints the board.
 			break;
 		} 
 		
-		case 2 :													// Case 2: An already-full column was attempted as an
+		case 2 :				// Case 2: An already-full column was attempted as an
 		{
 			for (int i = 0; i < boardRows; i++)
 			{
@@ -271,7 +271,7 @@ int DisplayWorld(int switchResult)			// Phyiscally prints the board.
 			GameContinue = false;
 			break;
 		}
-		case 3 :													// Case 3: The force-quit input was recieved. 
+		case 3 :				// Case 3: The force-quit input was recieved. 
 		{
 			for (int i = 0; i < boardRows; i++)
 			{
@@ -287,7 +287,7 @@ int DisplayWorld(int switchResult)			// Phyiscally prints the board.
 			GameContinue = false;
 			break;
 		}
-		default :													// Default: Default simply prints the updated board.
+		default :				// Default: Default simply prints the updated board.
 		{ 
 			for (int i = 0; i < boardRows; i++)
 			{
