@@ -234,7 +234,6 @@ int DisplayWorld(int switchResult)			// Phyiscally prints the board.
 {
 	switch (switchResult)
 	{
-		//*
 		case 1 :				// Case 1: Someone won the game by connecting 4 discs. 
 		{
 			for (int i = 0; i < boardRows; i++)
