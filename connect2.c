@@ -63,8 +63,8 @@ int Initialization () 		// Creates the game board and takes inputs for player na
 		scanf("%s", player2);
 		printf("Player 1 (x's): %s | Player 2 (o's): %s\n", player1, player2);
 		printf("(y/n) Is this correct? : ");					
-		scanf(" %c", &toggle);									// Checks for name correctness, allows the user to input new names if incorrect.
-		if (toggle == 'y')									// Simple y/n with input validation.
+		scanf(" %c", &toggle);							// Checks for name correctness, allows the user to input new names if incorrect.
+		if (toggle == 'y')							// Simple y/n with input validation.
 		{
 			break;
 		}
